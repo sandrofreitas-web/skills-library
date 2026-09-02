@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills OS — Platform & Governance Dashboard</title>
+  <link rel="stylesheet" href="static/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">⚡</div>
+      <div>
+        <div class="brand-title">Skills OS</div>
+        <span class="brand-version">v1.0.0</span>
+      </div>
+    </div>
+
+    <nav class="nav-group">
+      <a class="nav-item active" data-tab="hub">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+        Hub Global
+      </a>
+      <a class="nav-item" data-tab="fleet">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        Frota de Projetos
+      </a>
+      <a class="nav-item" data-tab="studio">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        Skill Studio (Preview)
+      </a>
+      <a class="nav-item" data-tab="metrics">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Ciclo de Vida & Métricas
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="sync-all-btn" id="btn-sync-all">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        Sincronizar Frota
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- VIEW 1: HUB GLOBAL -->
+    <section class="view-panel active" id="view-hub">
+      <div class="top-bar">
+        <div class="page-header">
+          <h1>Hub Global de Skills</h1>
+          <p>Catálogo centralizado e versionado de habilidades compartilhadas.</p>
+        </div>
+        <button class="btn-inspect" id="btn-validate-ci">⚡ Validar Linter (CI Check)</button>
+      </div>
+
+      <div class="search-filter-bar">
+        <div class="search-box">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input type="text" id="hub-search" placeholder="Buscar skills por nome, descrição, tag ou ferramenta...">
+        </div>
+      </div>
+
+      <div class="cards-grid" id="hub-cards-container">
+        <!-- Injetado dinamicamente via app.js -->
+      </div>
+    </section>
+
+    <!-- VIEW 2: FROTA DE PROJETOS -->
+    <section class="view-panel" id="view-fleet">
+      <div class="top-bar">
+        <div class="page-header">
+          <h1>Frota de Projetos (Fleet Manager)</h1>
+          <p>Gerenciamento de dependências, skills locais e compilação multi-LLM por repositório.</p>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn-inspect" id="btn-toggle-all-fleet">📐 Compactar / Expandir Todos</button>
+          <button class="btn-inspect" id="btn-add-project-modal">+ Adicionar Projeto</button>
+        </div>
+      </div>
+
+      <div id="fleet-cards-container">
+        <!-- Injetado dinamicamente via app.js -->
+      </div>
+    </section>
+
+    <!-- VIEW 3: SKILL STUDIO & LIVE PREVIEW -->
+    <section class="view-panel" id="view-studio">
+      <div class="top-bar">
+        <div class="page-header">
+          <h1>Skill Studio & Live Preview Multi-IDE</h1>
+          <p>Escreva no formato canônico SKILL.md e veja a transpilação instantânea para cada ferramenta.</p>
+        </div>
+        <button class="btn-project-sync" id="btn-studio-template">Carregar Template Canônico</button>
+      </div>
+
+      <div class="studio-grid">
+        <!-- Editor Column -->
+        <div class="editor-box">
+          <div class="box-header">
+            <h4>📄 SKILL.md (Formato Canônico / Fonte da Verdade)</h4>
+            <span class="badge-version">YAML Frontmatter + Markdown</span>
+          </div>
+          <textarea id="studio-editor" spellcheck="false"></textarea>
+        </div>
+
+        <!-- Preview Column -->
+        <div class="preview-box">
+          <div class="box-header">
+            <h4>⚡ Preview Compilado</h4>
+            <div class="preview-tabs">
+              <button class="preview-tab active" data-target="cursor">Cursor (.mdc)</button>
+              <button class="preview-tab" data-target="claude">Claude Code</button>
+              <button class="preview-tab" data-target="gemini">Gemini</button>
+              <button class="preview-tab" data-target="windsurf">Windsurf</button>
+              <button class="preview-tab" data-target="copilot">Copilot</button>
+            </div>
+          </div>
+          <pre id="studio-preview-code"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 4: CICLO DE VIDA & MÉTRICAS -->
+    <section class="view-panel" id="view-metrics">
+      <div class="top-bar">
+        <div class="page-header">
+          <h1>Governança, Ciclo de Vida & Métricas</h1>
+          <p>Métricas de adoção, alertas de duplicação e oportunidades de promoção de skills locais.</p>
+        </div>
+      </div>
+
+      <div class="fleet-card">
+        <h3 style="margin-bottom: 12px;">💡 Oportunidades de Promoção & Inteligência de Frota</h3>
+        <p style="color: var(--text-muted); font-size: 13px; line-height: 1.6; margin-bottom: 16px;">
+          O Skills OS analisa periodicamente os arquivos de skills locais e documentações de todos os projetos conectados para identificar padrões repetidos e sugerir promoções para o catálogo global.
+        </p>
+        <div id="metrics-insights-container">
+          <!-- Injetado via app.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Output Console Drawer -->
+  <div class="output-console" id="output-console">
+    <div class="console-header">
+      <div class="console-title">
+        <span class="status-indicator"></span>
+        Terminal / Log de Compilação
+      </div>
+      <button class="btn-inspect" id="btn-close-console" style="padding: 2px 8px; font-size: 11px;">Fechar ✕</button>
+    </div>
+    <pre class="console-body" id="console-output-text"></pre>
+  </div>
+
+  <!-- Modal for Skill Detail -->
+  <div class="modal-overlay" id="skill-modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-skill-title">Detalhes da Skill</h3>
+        <button class="btn-inspect" id="btn-close-modal">✕</button>
+      </div>
+      <div class="modal-body" id="modal-skill-body">
+        <!-- Injetado dinamicamente -->
+      </div>
+    </div>
+  </div>
+
+  <script src="static/app.js"></script>
+</body>
+</html>

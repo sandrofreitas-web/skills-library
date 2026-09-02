@@ -1,0 +1,17 @@
+[
+  {
+    "name": "project-example",
+    "path": "c:\\Docker\\skills-scaffold\\project-example",
+    "description": "Projeto de exemplo com skills locais e globais"
+  },
+  {
+    "name": "Project_Siaebr",
+    "path": "c:\\Docker\\projects\\Project_Siaebr",
+    "description": "Plataforma SIAEBR (FastAPI, dbt, PostgreSQL, Redis, Next.js)"
+  },
+  {
+    "name": "Finaceiro_pessoal",
+    "path": "g:\\Meu Drive\\01 Projetos\\Finaceiro_pessoal",
+    "description": "Personal Finance Cockpit (FastAPI, SQLite WAL, React 18)"
+  }
+]
