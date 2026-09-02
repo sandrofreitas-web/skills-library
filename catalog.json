@@ -25,5 +25,14 @@
     "used_by": [],
     "status": "stable",
     "version": "1.0.0"
+  },
+  "skill-creator": {
+    "path": "global/skill-creator/SKILL.md",
+    "description": "Meta-skill para criar, testar, validar e melhorar skills iterativamente com scripts e avaliações de performance.",
+    "tags": ["skills", "meta", "creation", "development", "testing"],
+    "compatible_with": ["claude", "gemini", "cursor", "windsurf", "copilot"],
+    "used_by": [],
+    "status": "stable",
+    "version": "1.0.0"
   }
 }
