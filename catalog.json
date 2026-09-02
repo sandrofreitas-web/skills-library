@@ -1,0 +1,20 @@
+{
+  "code-review": {
+    "path": "global/code-review/SKILL.md",
+    "description": "Revisão de PR/diff seguindo checklist de segurança, legibilidade e estilo, priorizada por severidade.",
+    "tags": ["dev", "review", "git"],
+    "compatible_with": ["claude", "cursor", "windsurf", "copilot"],
+    "used_by": ["project-example"],
+    "status": "stable",
+    "version": "1.0"
+  },
+  "writing-pt-br": {
+    "path": "global/writing-pt-br/SKILL.md",
+    "description": "Guia de estilo de escrita em português: tom, formatação, termos preferidos.",
+    "tags": ["writing", "pt-br", "style"],
+    "compatible_with": ["claude", "gemini", "cursor", "windsurf", "copilot"],
+    "used_by": ["project-example"],
+    "status": "stable",
+    "version": "1.0"
+  }
+}
