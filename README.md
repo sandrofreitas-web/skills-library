@@ -8,9 +8,14 @@ ele (via git submodule, subtree ou clone compartilhado — veja `scripts/sync_sk
 
 ```
 skills-library/
+├── .github/
+│   └── workflows/
+│       └── validate.yml      # CI: validação automática do catálogo e sintaxe
 ├── global/
 │   ├── code-review/SKILL.md
-│   └── writing-pt-br/SKILL.md
+│   ├── writing-pt-br/SKILL.md
+│   ├── managing-python-dependencies/SKILL.md
+│   └── skill-creator/SKILL.md (+ scripts/ e references/)
 ├── templates/
 │   └── SKILL_TEMPLATE.md
 ├── scripts/
