@@ -247,12 +247,12 @@ function renderFleet() {
           <div class="skill-toggle-list">
             ${localSkills.length === 0 ? '<div style="color: var(--text-dim); font-size: 12px; padding: 10px;">Nenhuma skill local criada ainda.</div>' : ''}
             ${localSkills.map((loc, lIdx) => `
-              <div class="skill-toggle-item" style="border-left: 3px solid var(--accent-emerald); display: flex; align-items: center; justify-content: space-between;">
-                <div style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                  <div style="font-weight: 600; color: #34D399;">${loc.name}</div>
+              <div class="skill-toggle-item" style="border-left: 3px solid var(--accent-emerald); display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                <div style="flex: 1; min-width: 0; overflow: hidden;">
+                  <div style="font-weight: 600; color: #34D399; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${loc.name}</div>
                   <div style="font-size: 11px; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${(loc.frontmatter && loc.frontmatter.description) || 'Skill local do projeto'}</div>
                 </div>
-                <button class="btn-inspect-mini" onclick="openLocalSkillModal(${pIdx}, ${lIdx})">Inspecionar ↗</button>
+                <button class="btn-inspect-mini" style="flex-shrink: 0;" onclick="openLocalSkillModal(${pIdx}, ${lIdx})">Inspecionar ↗</button>
               </div>
             `).join('')}
           </div>
