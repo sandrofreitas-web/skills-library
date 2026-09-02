@@ -151,7 +151,7 @@ window.openSkillModal = function (name) {
   document.getElementById('skill-modal').classList.add('open');
 };
 
-let allFleetCollapsed = false;
+let allFleetCollapsed = true;
 let fleetCollapsedState = {};
 
 // FLEET VIEW
