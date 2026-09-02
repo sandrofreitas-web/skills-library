@@ -16,5 +16,14 @@
     "used_by": ["project-example"],
     "status": "stable",
     "version": "1.0"
+  },
+  "managing-python-dependencies": {
+    "path": "global/managing-python-dependencies/SKILL.md",
+    "description": "Garante o gerenciamento correto de dependências Python usando uv como padrão, evitando pip install global.",
+    "tags": ["python", "uv", "dependencies", "pip"],
+    "compatible_with": ["claude", "gemini", "cursor", "windsurf", "copilot"],
+    "used_by": [],
+    "status": "stable",
+    "version": "1.0.0"
   }
 }
