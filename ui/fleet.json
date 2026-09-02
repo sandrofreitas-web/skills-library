@@ -13,5 +13,15 @@
     "name": "Finaceiro_pessoal",
     "path": "g:\\Meu Drive\\01 Projetos\\Finaceiro_pessoal",
     "description": "Personal Finance Cockpit (FastAPI, SQLite WAL, React 18)"
+  },
+  {
+    "name": "igreja-crist-evan",
+    "path": "c:\\Docker\\igreja-crist-evan",
+    "description": "Portal Web & App Igreja Cristã Evangélica (React 18, Vite, TailwindCSS)"
+  },
+  {
+    "name": "icenv_treasury",
+    "path": "g:\\Meu Drive\\01 Projetos\\icenv_treasury",
+    "description": "Automação de Tesouraria e DRE (Python, uv, Streamlit, Excel COM)"
   }
 ]
